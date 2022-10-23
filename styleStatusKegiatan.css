@@ -30,13 +30,19 @@
     align-items: center;
 }
 
-.header .d-flex h4{
+.header .d-flex button{
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     letter-spacing: -0.011em;
     color: #000;
+    border: none;
+    background:#b6c761;
+}
+
+.header .d-flex button:hover{
+    color: white;
 }
 
 .container .row .col .card{
@@ -63,7 +69,7 @@
     color: #000000;
 }
 
-.container .card-body a{
+.container .card-body button{
     background: #9EB23B;
     border-radius: 48px;
     font-size: 14px;
