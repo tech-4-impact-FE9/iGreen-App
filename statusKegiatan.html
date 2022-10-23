@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="view-change">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +31,7 @@
     <title>Status Kegiatan</title>
 </head>
 <body style="background: linear-gradient(160deg, #C7D36F, #FCF9C6)">
-
+    
     <!-- Bagian Navbar menu -->
     <section id="hero">
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent position-fixed w-100">
@@ -75,26 +75,16 @@
         <header class="header">
             <h3>My Activities</h3>
             <div class="d-flex text-decoration-none">
-                <h4 href="#" style="margin: 10px 70px;">Active Activities</h4>
-                <h4 href="#" style="margin:10px 0">Registration Status</h4>
+                <button  style="margin: 10px 70px;" onclick="showCardActive()">Active Activities</button>
+                <button style="margin:10px 0"onclick="showCardNonActive()">Registration Status</button>
             </div>
         </header>
 
         <!-- Bagian Card -->
         
         <div class="container">
-            <div class="row row-cols-1 row-cols-md-4 g-4">
-                <div class="col">
-                    <div class="card m-5" style="width: 18rem;">
-                        <img src="/images/pexels-min-an-1406866.jpg" class="card-img-top rounded-15" alt="">
-                        <button class="btn badge bg-warning">Being Processed</button>
-                        <div class="card-body">
-                            <h5 class="card-title">Peduli Lingkungan: Pembuatan taman & Penanaman pohon di kampung durian runtuh</h5>
-                            <p class="card-text"><i class="far fa-clock"></i> 3 Month</p>
-                            <a href="#" class="btn">Go Detail <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row row-cols-1 row-cols-md-4 g-4" id="row-card">
+                
             </div>
         </div>
     </section>
@@ -136,5 +126,7 @@
   
         </footer>
     </section>
+
+    <script src="/statusKegiatan.js"></script>
 </body>
 </html>
