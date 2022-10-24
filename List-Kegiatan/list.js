@@ -1,8 +1,15 @@
 let showCard = document.querySelector("#row-card")
 let ViewChange = document.querySelector("#view-change")
 
+let idCard = document.querySelector("#id-card")
+let cv = document.querySelector("#cv")
+let studentCard = document.querySelector("#student-card")
+let healthLatter = document.querySelector("#health-letter")
+let numberPhone = document.querySelector("#number-telephone")
+let email = document.querySelector("#email")
+let opinii = document.querySelector("#opini")
 
-async function showCardNonActive(){
+async function showList(){
     let url = await fetch("https://634b803dd90b984a1e3ac3f4.mockapi.io/api/fe9/apiPendaftaranVolunteer")
     let result = await url.json()
 
@@ -15,7 +22,7 @@ async function showCardNonActive(){
                     
                     <div class="card-body">
                         <h5 class="card-title">${item.title}</h5>
-                        <p class="card-text"><i class="far fa-clock"></i> ${item.periodet}</p>
+                        <p class="card-text"><i class="far fa-clock"></i> ${item.periode}</p>
                         <button  class="btn" onclick="detailPage (${item.id})">Go Detail <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
@@ -52,7 +59,7 @@ async function detailPage (id){
             <!-- Bagian Navbar  -->
             <nav class="navbar navbar-light">
                 <div class="container-fluid">
-                    <a href="list.html" class="navbar-brand mb-0 h1"><i class="far fa-arrow-left"></i> Back</a>
+                    <a href="/List-Kegiatan/list.html" class="navbar-brand mb-0 h1"><i class="far fa-arrow-left"></i> Back</a>
                 </div>
             </nav>
 
@@ -75,7 +82,7 @@ async function detailPage (id){
             <!-- Bagian Footer -->
             <nav class="navbar navbar-light">
                 <div class="container-fluid justify-content-end">
-                    <input type="button" class="btn" value="Daftar" style="background: #9EB23B; color:white; height: 34px; width: 150px; border-radius: 48px;">
+                    <a type="button" class="btn" href="/formDaftar.html" style="background: #9EB23B; color:white; height: 34px; width: 150px; border-radius: 48px;">Daftar</a>
                 </div>
             </nav>
         </div>
@@ -83,8 +90,44 @@ async function detailPage (id){
 `
 
 }
+showList()
+
+async function tambahPendaftar(id){
+    let url = await fetch (`https://634b803dd90b984a1e3ac3f4.mockapi.io/api/fe9/apiPendaftaranVolunteer/${id}`)
+    let result = await url.json()
+    console.log(idCard);
+    
+    let dataInput = {
+        gambar_event : `${result.gambar}`,
+        name_event : `${result.title}`,
+        address : `${result.address}`,
+        periode_event : `${result.periode}`,
+        detail_aktivitas : `${result.detail_activities}`,
+        volunteer_requirment : `${result.volunteer_requirement}`,
+        link_IDCard : `${idCard.value}`,
+        link_cv : `${cv.value}`,
+        link_studentCard : `${studentCard.value}`,
+        link_HealthLetter : `${healthLatter.value}`,
+        nomor_telepon : `${numberPhone.value}`,
+        email : `${email.value}`,
+        opini : `${opinii.value}`,
+        status : `being processed`
+    }
+
+    let link = await fetch("https://634b803dd90b984a1e3ac3f4.mockapi.io/api/fe9/apiPenyimpananDataPendaftaran", {
+        method : 'POST',
+        body : JSON.stringify(dataInput),
+        headers : {"Content-type" : "application/json"},
+
+    })
+    let response = await link.json()
+    alert("berhasil")
+   
+
+}
 
 
 
-showCardNonActive()
 
+
+// /apiPenyimpananDataPendaftaran
