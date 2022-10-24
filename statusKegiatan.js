@@ -102,7 +102,6 @@ async function detailPage (id){
             <!-- Bagian Footer -->
             <nav class="navbar navbar-light">
                 <div class="container-fluid justify-content-end">
-                    <input type="button" class="btn" value="Daftar" style="background: #9EB23B; color:white; height: 34px; width: 150px; border-radius: 48px;">
                 </div>
             </nav>
         </div>
