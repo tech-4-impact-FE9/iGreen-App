@@ -132,7 +132,7 @@ function viewForm (id){
                 <label for="opini" class="form-label">Why are you interested in volunteering for this activity?</label>
                 <input type="text" class="form-control" placeholder="Your answer" id="opini">
                 
-                <button type="submit" class="btn" onclick ="tambahPendaftar(${id})">Send <i class="fas fa-arrow-right"></i></button>
+                <button type="button" class="btn" onclick ="tambahPendaftar(${id})">Send <i class="fas fa-arrow-right"></i></button>
             </form>
         </div>
 
