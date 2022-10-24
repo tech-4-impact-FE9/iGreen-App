@@ -16,35 +16,35 @@
     <div class="container-fluid">
         <nav class="navbar navbar-light">
             <div class="container-fluid">
-                <a href="#" class="navbar-brand mb-0 h1"><i class="far fa-arrow-left"></i> Back</a>
+                <a href="/List-Kegiatan/list.html" class="navbar-brand mb-0 h1"><i class="far fa-arrow-left"></i> Back</a>
             </div>
         </nav>
 
         <div class="card mt-4 mb-4">
-            <div class="card-body">
-                <p class="card-text">Enter your ID Card (.pdf)</p>
-                <input type="text" class="form-control" placeholder="Link file" aria-label="Username" aria-describedby="addon-wrapping">
+            <form class="card-body" id="form-daftar">
+                <label for="id-card" class="form-label">Enter your ID Card (.pdf)</label>
+                <input type="text" class="form-control" placeholder="Link file" id="id-card">
 
-                <p class="card-text">Enter your CV (.pdf)</p>
-                <input type="text" class="form-control" placeholder="Link file" aria-label="Username" aria-describedby="addon-wrapping">
+                <label for="cv" class="form-label">Enter your CV (.pdf)</label>
+                <input type="text" class="form-control" placeholder="Link file" id="cv">
                 
-                <p class="card-text">If you are student, you can enter a student ID Card (.pdf)</p>
-                <input type="text" class="form-control" placeholder="Link file" aria-label="Username" aria-describedby="addon-wrapping">
+                <label for="student-card" class="form-label">If you are student, you can enter a student ID Card (.pdf)</label>
+                <input type="text" class="form-control" placeholder="Link file" id="student-card">
 
-                <p class="card-text">A health leter from a doctor (.pdf)</p>
-                <input type="text" class="form-control" placeholder="Link file" aria-label="Username" aria-describedby="addon-wrapping">
-              
-                <p class="card-text">Enter your mobile number and email address to make it easier for the organization to contact you</p>
+                <label for="health-letter" class="form-label">A health leter from a doctor (.pdf)</label>
+                <input type="text" class="form-control" placeholder="Link file" id="health-letter">
+                
+                <label class="form-label">Enter your mobile number and email address to make it easier for the organization to contact you</label>
                 <div class="input-group flex-nowrap">
-                    <input type="text" class="form-control" placeholder="+62 xxxx xxxx xx" aria-label="number phone" aria-describedby="addon-wrapping">
-                    <input type="text" class="form-control" placeholder="email" aria-label="email" aria-describedby="addon-wrapping">
+                    <input type="text" class="form-control" placeholder="+62 xxxx xxxx xx" id="number-phone">
+                    <input type="text" class="form-control" placeholder="email" id="email">
                 </div>
 
-                <p class="card-text">Why are you interested in volunteering for this activity?</p>
-                <input type="text" class="form-control" placeholder="Your answer" aria-label="Username" aria-describedby="addon-wrapping">
+                <label for="opini" class="form-label">Why are you interested in volunteering for this activity?</label>
+                <input type="text" class="form-control" placeholder="Your answer" id="opini">
                 
-                <a href="#" class="btn">Send <i class="fas fa-arrow-right"></i></a>
-            </div>
+                <button type="submit" class="btn">Send <i class="fas fa-arrow-right"></i></button>
+            </form>
         </div>
 
         <nav class="navbar navbar-light">
@@ -52,5 +52,6 @@
             </div>
         </nav>
     </div>
+    <script src="/formDaftar.js"></script>
 </body>
 </html>

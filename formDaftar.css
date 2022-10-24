@@ -12,11 +12,16 @@
     border-radius: 9.02435px;
 }
 
-.card .card-body p{
+.container-fluid button{
+    border: none;
+    background: none;
+}
+
+.card .card-body label{
     margin: 14px;
 }
 
-.card .card-body a{
+.card .card-body button{
     background: #9EB23B;
     border-radius: 27px;
     color: white;
