@@ -1,19 +1,13 @@
 let showCard = document.querySelector("#row-card")
 let ViewChange = document.querySelector("#view-change")
 
-let idCard = document.querySelector("#id-card")
-let cv = document.querySelector("#cv")
-let studentCard = document.querySelector("#student-card")
-let healthLatter = document.querySelector("#health-letter")
-let numberPhone = document.querySelector("#number-telephone")
-let email = document.querySelector("#email")
-let opinii = document.querySelector("#opini")
+
+
 
 async function showList(){
     let url = await fetch("https://634b803dd90b984a1e3ac3f4.mockapi.io/api/fe9/apiPendaftaranVolunteer")
     let result = await url.json()
 
-    showCard.innerHTML = " "
     result.forEach((item) => {
              showCard.innerHTML +=
             `<div class="col">
@@ -92,39 +86,52 @@ async function detailPage (id){
 }
 showList()
 
-async function tambahPendaftar(id){
-    let url = await fetch (`https://634b803dd90b984a1e3ac3f4.mockapi.io/api/fe9/apiPendaftaranVolunteer/${id}`)
-    let result = await url.json()
-    console.log(idCard);
+// async function idApi(id){
+//     let url = await fetch (`https://634b803dd90b984a1e3ac3f4.mockapi.io/api/fe9/apiPendaftaranVolunteer/${id}`)
+//     let result = await url.json()
+
+//     let dataInput = {
+//         gambar_event : `${result.gambar}`,
+//         name_event : `${result.title}`,
+//         address : `${result.address}`,
+//         periode_event : `${result.periode}`,
+//         detail_aktivitas : `${result.detail_activities}`,
+//         volunteer_requirment : `${result.volunteer_requirement}`
+//     }
     
-    let dataInput = {
-        gambar_event : `${result.gambar}`,
-        name_event : `${result.title}`,
-        address : `${result.address}`,
-        periode_event : `${result.periode}`,
-        detail_aktivitas : `${result.detail_activities}`,
-        volunteer_requirment : `${result.volunteer_requirement}`,
-        link_IDCard : `${idCard.value}`,
-        link_cv : `${cv.value}`,
-        link_studentCard : `${studentCard.value}`,
-        link_HealthLetter : `${healthLatter.value}`,
-        nomor_telepon : `${numberPhone.value}`,
-        email : `${email.value}`,
-        opini : `${opinii.value}`,
-        status : `being processed`
-    }
+//     let link = await fetch("https://634b803dd90b984a1e3ac3f4.mockapi.io/api/fe9/apiPenyimpananDataPendaftaran", {
+//         method : 'POST',
+//         body : JSON.stringify(dataInput),
+//         headers : {"Content-type" : "application/json"},
 
-    let link = await fetch("https://634b803dd90b984a1e3ac3f4.mockapi.io/api/fe9/apiPenyimpananDataPendaftaran", {
-        method : 'POST',
-        body : JSON.stringify(dataInput),
-        headers : {"Content-type" : "application/json"},
+//     })
+//     let response = await link.json()
+//     response.length()
 
-    })
-    let response = await link.json()
-    alert("berhasil")
-   
+//     // tambahPendaftar(id)
+// }
 
-}
+// async function tambahPendaftar(id){
+    
+//     let inputData = {
+//         link_IDCard : `${idCard.value}`,
+//         link_cv : `${cv.value}`,
+//         link_studentCard : `${studentCard.value}`,
+//         link_HealthLetter : `${healthLatter.value}`,
+//         nomor_telepon : `${numberPhone.value}`,
+//         email : `${email.value}`,
+//         opini : `${opinii.value}`,
+//         status : `being processed`
+//     } 
+// }  
+
+// formDaftar.addEventListener("submit", (event) =>{
+//     event.preventDefault()
+
+    
+
+// }
+
 
 
 

@@ -12,6 +12,11 @@
     border-radius: 9.02435px;
 }
 
+.container-fluid button{
+    border: none;
+    background: none;
+}
+
 .card .card-body label{
     margin: 14px;
 }
